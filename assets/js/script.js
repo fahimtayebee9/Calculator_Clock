@@ -45,6 +45,9 @@ const calcCases = {
 function reset(){
     result.textContent = '0';
     previousValue.textContent = '';
+    firstOperand = 0;
+    operatorValue = '';
+    nextinQueue = false;
 }
 
 //DECIMAL CHECK
@@ -77,7 +80,11 @@ function displayPrevious(value, operator = ''){
     else if(operator == '/' && operator != '='){
         previousValue.textContent = `${value}÷`;
     }
-    else{
+    else if(operator == '%'){
+        previousValue.textContent = `${value}%`;
+    }
+    else if(previousValue.textContent.includes('+') || previousValue.textContent.includes('-') || 
+            previousValue.textContent.includes('x') || previousValue.textContent.includes('÷') || previousValue.textContent.includes('%')){
         previousValue.textContent = previousValue.textContent + value;
     }
 }
