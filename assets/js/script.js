@@ -70,22 +70,9 @@ function display(value){
 }
 
 // Display Function
-function displayPrevious(value, operator = ''){
-    if(operator == '+' || operator == '-' && operator != '='){
-        previousValue.textContent = `${value}${operator}`;
-    }
-    else if(operator == '*' && operator != '='){
-        previousValue.textContent = `${value}x`;
-    }
-    else if(operator == '/' && operator != '='){
-        previousValue.textContent = `${value}÷`;
-    }
-    else if(operator == '%'){
-        previousValue.textContent = `${value}%`;
-    }
-    else if(previousValue.textContent.includes('+') || previousValue.textContent.includes('-') || 
-            previousValue.textContent.includes('x') || previousValue.textContent.includes('÷') || previousValue.textContent.includes('%')){
-        previousValue.textContent = previousValue.textContent + value;
+function displayPrevious(value, operator, curValue){
+    if(operator != '='){
+        previousValue.textContent = `${value}${operator}${curValue}`;
     }
 }
 
@@ -98,16 +85,10 @@ function operator(operator){
     else{
         const calcCaseAns = calcCases[operatorValue](firstOperand,currentValue);
         result.textContent = calcCaseAns;
+        displayPrevious(firstOperand, operatorValue,currentValue);
         firstOperand = calcCaseAns;
     }
     
-    // previous value print
-    if(operator != '='){
-        displayPrevious(firstOperand, operator);
-    }
-    else{
-        displayPrevious(currentValue);
-    }
     nextinQueue = true;
     operatorValue = operator;
 }
