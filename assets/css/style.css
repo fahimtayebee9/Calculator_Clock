@@ -3,14 +3,13 @@
     margin: 0;
 }
 .main{
-    height: 100vh;
-    overflow: hidden;
+    min-height: 100vh;
     justify-content: center;
     align-items: center;
     background: rgb(30 53 62);
 }
 .main-row{
-    height: 100vh;
+    min-height: 100vh;
     padding-left: 0px;
     align-items: center;
     justify-content: center;
@@ -18,6 +17,7 @@
     text-align: center;
 }
 .clock{
+    margin: auto;
     width: 400px;
     height: 400px;
     display: flex;
@@ -28,7 +28,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    border: 5px solid rgb(30 53 62);
+    border: 2px solid rgb(30 53 62);
     border-radius: 50%;
     box-shadow: 0 -15px 15px 0px rgba(255, 255, 255, 0.05),
                 inset 0 -15px 15px 0px rgba(255, 255, 255, 0.05),
@@ -116,6 +116,106 @@
     -o-border-radius: 6px 6px 0px 0px;
 }
 
+/*==================================================
+            CALCULATOR STYLE
+==================================================*/
+.mobile{
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    border: 2px solid rgb(30 53 62);
+    border-radius: 10px;
+    box-shadow: 0 0 32px rgb(255 255 255 / 5%), 0px 0 15px rgb(255 255 255 / 5%);
+    padding: 50px;
+    margin: 50px auto;
+}
+.calculator{
+    margin: auto;
+}
+.display{
+    width: 100%;
+    height: 150px;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    border: 2px solid rgb(30 53 62);
+    border-radius: 10px;
+    box-shadow: 6px 6px 8px rgb(255 255 255 / 8%), 
+                -6px -6px 10px rgb(255 255 255 / 5%), 
+                inset -8px -8px 12px rgb(0 0 0 / 13%), 
+                inset 5px 5px 8px rgb(0 0 0 / 10%);
+    padding: 15px;
+    background: transparent;
+    background-color: transparent!important;
+    text-align: right;
+    font-size: 34px;
+    color: white!important;
+    margin-bottom: 25px;
+    overflow: hidden;
+}
+.result{
+    background: transparent;
+    background-color: transparent!important;
+    text-align: right;
+    font-size: 38px;
+    color: white!important;
+    overflow: hidden;
+    padding: 10px;
+}
+.previousValue{
+    background: transparent;
+    background-color: transparent!important;
+    text-align: right;
+    font-size: 24px;
+    color: white!important;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.result:focus, .result.active{
+    box-shadow: 6px 6px 8px rgb(255 255 255 / 8%), 
+                -6px -6px 10px rgb(255 255 255 / 5%), 
+                inset -8px -8px 12px rgb(0 0 0 / 13%), 
+                inset 5px 5px 8px rgb(0 0 0 / 10%);
+    padding: 15px;
+    background: transparent!important;
+    border-color: rgb(30 53 62);
+}
+.keyboard button{
+    min-width: 60px;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0px;
+    background: transparent;
+    color: white;
+    border: none!important;
+    border-radius: 10px;
+    height: 60px;
+    font-weight: bold!important;
+    font-size: 24px;
+    box-shadow: 5px 5px 8px rgb(0 0 0 / 25%), -2px 4px 10px #ffffff21;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+.keyboard button:focus,.keyboard button:active{
+    border: none!important;
+    outline: none!important;
+}
+.keyboard button:active{
+    box-shadow: -3px -3px 8px #ffffff21, 3px 3px 8px  rgb(0 0 0 / 25%);
+}
+.operator{
+    color: rgb(255, 81, 0)!important;
+}
+.clear{
+    color: rgb(255, 81, 0)!important;
+}
+.equal-sign{
+    height: 230px!important;
+}
 
 @media (max-width: 720px){
     .clock{
